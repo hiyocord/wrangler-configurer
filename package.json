@@ -1,6 +1,6 @@
 {
   "name": "@hiyocord/wrangler-configurer",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "generate wrangler configuration",
   "license": "MIT",
   "type": "module",
