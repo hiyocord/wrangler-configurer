@@ -1,0 +1,42 @@
+{
+  "name": "@hiyocord/wrangler-configurer",
+  "version": "0.0.1",
+  "description": "generate wrangler configuration",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hiyocord/wrangler-configurer.git"
+  },
+  "author": "kurages <develop@kurages.dev> (https://kurages.dev)",
+  "bugs": {
+    "url": "https://github.com/hiyocord/wrangler-configurer/issues"
+  },
+  "homepage": "https://github.com/hiyocord/wrangler-configurer#readme",
+  "files": [
+    "src",
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "bin": {
+    "wrangler-configurer": "dist/cli.mjs"
+  },
+  "scripts": {
+    "build": "tsx build.ts",
+    "lint": "true",
+    "test": "true"
+  },
+  "devDependencies": {
+    "@types/node": "^24.8.1",
+    "esbuild": "^0.25.11",
+    "esbuild-node-externals": "^1.18.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  },
+  "peerDependencies": {
+    "wrangler": "^4.43.0"
+  }
+}
