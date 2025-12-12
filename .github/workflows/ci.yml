@@ -12,18 +12,18 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
         with:
           node-version: 22
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         with:
           path: node_modules
           key: ${{ hashFiles('package-lock.json') }}
       - run: npm install
       - name: build
         run: npm run build
-      - uses: actions/cache/save@v4
+      - uses: actions/cache/save@v5
         with:
           path: dist
           key: dist-${{ github.sha }}
@@ -33,15 +33,15 @@ jobs:
       - build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
         with:
           node-version: 22
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         with:
           path: "**/node_modules"
           key: ${{ hashFiles('package-lock.json') }}
-      - uses: actions/cache/restore@v4
+      - uses: actions/cache/restore@v5
         with:
           path: dist
           key: dist-${{ github.sha }}
@@ -53,15 +53,15 @@ jobs:
       - build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
         with:
           node-version: 22
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         with:
           path: "**/node_modules"
           key: ${{ hashFiles('package-lock.json') }}
-      - uses: actions/cache/restore@v4
+      - uses: actions/cache/restore@v5
         with:
           path: dist
           key: dist-${{ github.sha }}
@@ -81,7 +81,7 @@ jobs:
           - https://npm.pkg.github.com
           - https://registry.npmjs.org
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
         if: ${{ matrix.registry-url == 'https://npm.pkg.github.com' }}
         with:
@@ -97,11 +97,11 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPMJS_TOKEN }}
 
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         with:
           path: "**/node_modules"
           key: ${{ hashFiles('package-lock.json') }}
-      - uses: actions/cache/restore@v4
+      - uses: actions/cache/restore@v5
         with:
           path: dist
           key: dist-${{ github.sha }}
