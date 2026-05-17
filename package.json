@@ -33,7 +33,7 @@
     "@types/node": "25.8.0",
     "esbuild": "0.28.0",
     "esbuild-node-externals": "1.22.0",
-    "tsx": "4.22.0",
+    "tsx": "4.22.1",
     "typescript": "6.0.3"
   },
   "peerDependencies": {
