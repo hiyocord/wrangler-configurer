@@ -30,7 +30,7 @@
     "test": "true"
   },
   "devDependencies": {
-    "@types/node": "25.9.8",
+    "@types/node": "25.9.9",
     "esbuild": "0.28.2",
     "esbuild-node-externals": "2.0.0",
     "tsx": "4.23.15",
